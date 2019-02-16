@@ -29,8 +29,7 @@ function searchWeather() {
             let description = data.weather[0].description.toUpperCase();
             let temp = data.main.temp;
 
-            let weather = new Weather(cityName, description);
-            weather.temperature = temp;
+            let weather = new Weather(cityName, description, temp);
 
             setTimeout(function(){
                 console.log('weather', weather);

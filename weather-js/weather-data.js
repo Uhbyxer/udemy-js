@@ -1,6 +1,40 @@
 "use strict";
 
-function Weather(cityName, description) {
+class Weather {
+    constructor(cityName, description, temperature) {
+        this._temperature = (temperature * 1.8 + 32).toFixed(2) + ' F.';
+        this._cityName = cityName;
+        this._description = description;
+    }
+
+    get cityName() {
+        return this._cityName;
+    }
+
+    set cityName(value) {
+        this._cityName = value;
+    }
+
+    get description() {
+        return this._description;
+    }
+
+    set description(value) {
+        this._description = value;
+    }
+
+    get temperature() {
+        return this._temperature;
+    }
+
+    set temperature(value) {
+        this._temperature = value;
+    }
+}
+
+//////////////////////
+
+function WeatherOldStyle(cityName, description) {
     this.cityName = cityName;
     this.description = description;
     this._temperature = '';
